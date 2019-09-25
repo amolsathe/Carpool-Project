@@ -1,0 +1,53 @@
+<div class="load">
+    <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+</div>
+
+
+<div class="lform" *ngIf="!loading">
+    <h2>Register as Rider</h2>
+<form [formGroup]="riderForm" >
+    <div class="form-group" *ngIf="isRider">
+        <mat-form-field class="fwidth" >
+            <input matInput placeholder="Licence Number" pattern="^[a-zA-Z]{2}-[0-9]{13}$" formControlName="licNumber" name="licNumber" required>
+            <mat-icon matSuffix></mat-icon>
+            <mat-hint>Allowed Format DL-1420110012345 only</mat-hint>
+            </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="haveCar">
+        <mat-form-field class="fwidth">
+            <input matInput placeholder="Vehical Number" pattern="^[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}$" formControlName="carNumber" name="carNumber" required>
+            <!-- <mat-icon matSuffix>keyboard_arrow_right</mat-icon> -->
+            <mat-hint>Allowed Format MH12PQ2121 only</mat-hint>
+            </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="fwidth" *ngIf="haveCar">
+            <input matInput placeholder="Car Company and Model" pattern="^[a-zA-Z0-9-]{4,40}$" formControlName="carModel" name="carModel" required>
+            <mat-icon matSuffix></mat-icon>
+            </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="haveCar">
+        <mat-form-field class="fwidth">
+            <input matInput placeholder="Total Seating Capacity" formControlName="totalSeats" name="totalSeats" required>
+            <!-- <mat-icon matSuffix>keyboard_arrow_right</mat-icon> -->
+            </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="haveCar">
+        <mat-checkbox formControlName="insurance" >Have Insurance</mat-checkbox>
+    </div>
+    <div class="form-group" *ngIf="haveCar">
+        <mat-checkbox formControlName="ac" >AC</mat-checkbox>
+    </div>
+    <div class="form-group" *ngIf="haveCar">
+        <mat-checkbox formControlName="chargingPort" >Charging Facility</mat-checkbox>
+    </div>
+    <p>{{status}}</p>
+    <div class="form-group" style="text-align: left;">
+        <button class="sb-btn" *ngIf="isRider"  (click)="onLicenceSubmit()" class="btn btn-primary">Next</button>
+        <button class="sb-btn" *ngIf="haveCar" (click)="onCarSubmit()" class="btn btn-primary">Submit Car Details</button>
+        <button class="sb-btn" type="button" style="margin-left: 1em" (click)="onCancel()" class="btn btn-danger">Cancel</button>
+        <!-- <button matButton class="sb-btn"  routerLink="/signup" class="btn btn-accent">Register</button> -->
+    </div>
+</form>
+
+</div>

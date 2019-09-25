@@ -1,0 +1,29 @@
+
+						Angular Application Structure
+
+-app-component
+----admin
+	|----login
+	|----UserDetails
+
+----global
+	|----header
+	|----footer
+	|----home
+	|----login
+	|----signUp
+	|----Error
+
+----user
+	|----allUser
+		 |----editProfile
+
+	|----offferRide
+		 |----addRide
+		 |----manageRide
+		 |----log
+
+	|----joinRide
+		 |----search
+		 |----join
+		 |----log(reviews)

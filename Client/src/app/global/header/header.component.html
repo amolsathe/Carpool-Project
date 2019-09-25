@@ -1,0 +1,64 @@
+<header>
+  <div class="logo">
+    <a routerLink="/"><img class="logo" src="../../assets/rslogo.jpg" alt="logo"></a>
+  </div>
+  <nav class="mynav">
+    <ul>
+      <li>
+        <a class="nav-item nav-link" [routerLink]="['/user/findRide']" routerLinkActive="router-link-active"><i
+            class="material-icons">search</i> Find a ride </a>
+      </li>
+      <li>
+        <a class="nav-item nav-link" [routerLink]="['/user/offer']" routerLinkActive="router-link-active"><i
+            class="material-icons">add_circle_outline</i> Offer a ride</a>
+      </li>
+      <li>
+        <a class="nav-item nav-link" [routerLink]="['/signup']" routerLinkActive="router-link-active"><i
+            class="material-icons">person_add</i> Sign up</a>
+      </li>
+      <li>
+        <a class="nav-item nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active"><i
+            class="material-icons"></i> Log in</a>
+      </li>
+      <li>
+        <button mat-button *ngIf="loggedIn()" class="userMenuBtn" [matMenuTriggerFor]="beforeMenu"><i
+            class="material-icons"></i>{{name}}</button>
+        <mat-menu #beforeMenu="matMenu" class="userMenu" xPosition="before">
+          <button mat-menu-item class="userMenuOptions" routerLink="/user/update">Update Profile</button>
+          <button mat-menu-item class="userMenuOptions" routerLink="/user/manBooking">Manage Bookings</button>
+          <button mat-menu-item class="userMenuOptions" routerLink="/user/manRides">Manage Offered Rides</button>
+          <button mat-menu-item class="userMenuOptions" (click)="onLogout()">Logout</button>
+        </mat-menu>
+      </li>
+    </ul>
+  </nav>
+  <div class="mobile">
+    <div class="row">
+      <div class="menu">
+          <button mat-button class="menuBtn" [matMenuTriggerFor]="beforeMenuNav"><i
+            class="material-icons">menu</i></button>
+        <mat-menu #beforeMenuNav="matMenu" class="userMenu" xPosition="before">
+          <button mat-menu-item class="userMenuOptions" ><a class="nav-item nav-link" [routerLink]="['/user/findRide']" routerLinkActive="router-link-active"><i
+            class="material-icons"></i> Find a ride </a></button>
+          <button mat-menu-item class="userMenuOptions" ><a class="nav-item nav-link" [routerLink]="['/user/offer']" routerLinkActive="router-link-active"><i
+            class="material-icons">add_circle_outline</i> Offer a ride</a></button>
+          <button mat-menu-item class="userMenuOptions" > <a class="nav-item nav-link" [routerLink]="['/signup']" routerLinkActive="router-link-active"><i
+            class="material-icons">person_add</i> Sign up</a></button>
+          <button mat-menu-item class="userMenuOptions" (click)="onLogout()">Logout</button>
+        </mat-menu>
+      </div>
+      <div class="user">
+        <button mat-button *ngIf="loggedIn()"  class="menuBtn" [matMenuTriggerFor]="beforeMenu"><i
+          class="material-icons">account_box</i></button>
+      <mat-menu #beforeMenu="matMenu" class="userMenu" xPosition="before">
+        <button mat-menu-item class="userMenuOptions" >{{name}}</button>
+        <button mat-menu-item class="userMenuOptions" routerLink="/user/update">Update Profile</button>
+        <button mat-menu-item class="userMenuOptions" routerLink="/user/manBooking">Manage Bookings</button>
+        <button mat-menu-item class="userMenuOptions" routerLink="/user/manRides">Manage Offered Rides</button>
+        <button mat-menu-item class="userMenuOptions" (click)="onLogout()">Logout</button>
+      </mat-menu>
+      </div>
+    </div>
+  </div>
+
+</header>

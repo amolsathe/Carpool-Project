@@ -1,0 +1,40 @@
+footer{
+    width: 100%;
+    margin-top: 2em;
+    background-color: #BDBDBD;
+    position: sticky;
+    height: 200px;
+    padding-top: 2em;
+}
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer h3 {
+    margin-top: 1em;
+    margin-left: 10%;
+}
+footer .design{
+    margin-top: 2em;
+    margin-right: 14%;
+}
+.design p {
+    line-height: 0.5em;
+}
+.names{
+    padding-left:1em;
+    font-size: 16px;
+}
+.social ul{
+    margin-left: 7.4%;
+    text-align: left;
+    list-style: none;
+    justify-content: space-between;
+    width: 30%;
+    display: flex;
+    text-decoration: none;
+}
+.social li a{
+    color: black;
+}

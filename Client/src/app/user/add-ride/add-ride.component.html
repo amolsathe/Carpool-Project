@@ -1,0 +1,89 @@
+<div class="lform">
+    <h2>Offer New Ride</h2>
+    <form [formGroup]="addRideForm">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 ">
+                <div class="form-group">
+                    <mat-form-field class="fwidth">
+                        <input matInput placeholder="Origin" #searchSrc formControlName="origin" name="origin" required>
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="fwidth">
+                        <input matInput placeholder="Destination" #searchDest formControlName="destination"
+                            name="destination" required>
+                        <!-- <mat-icon matSuffix>keyboard_arrow_right</mat-icon> -->
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="fwidth">
+                        <input matInput placeholder="Distance(km)" formControlName="distance" name="distance" required>
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate"
+                            placeholder="Date of Ride" formControlName="rideDate" name="rideDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="month" [startAt]="startDate"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="fwidth">
+                        <input matInput placeholder="Time (24 hrs Format)" type="time" formControlName="rideTime"
+                            name="rideTime" required>
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-sm-6 map">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false"
+                    [zoomControl]="true" (mapClick)="mapClicked($event)">
+
+                    <agm-direction *ngIf="dirSet" [origin]="origin" [destination]="dest">
+                    </agm-direction>
+                    <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)"
+                        [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable"
+                        (dragEnd)="markerDragEnd(m, $event)">
+
+                        <agm-info-window>
+                            <strong></strong>
+                        </agm-info-window>
+
+                    </agm-marker>
+                </agm-map>
+            </div>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="fwidth">
+                <input matInput placeholder="Available Seats" min="1" max="12" type="number" formControlName="avilSeats"
+                    name="avilSeats" required>
+                <mat-icon matSuffix></mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="fwidth">
+                <input matInput placeholder="Approximate Journey Time" type="text" formControlName="jurTime"
+                    name="jurTime" required>
+                <mat-icon matSuffix></mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="fwidth">
+                <input matInput placeholder="Fare &#x20B9;" formControlName="fare" name="fare" required>
+                <mat-icon matSuffix></mat-icon>
+            </mat-form-field>
+        </div>
+        <p>{{status}}</p>
+        <div class="form-group" style="text-align: left;">
+            <button  type="submit" (click)="onSubmit()" class="btn btn-primary">Add Ride</button>
+            <button  type="button" style="margin-left: 1em" (click)="onCancel()"
+                class="btn btn-danger">Cancel</button>
+            <!-- <button matButton class="sb-btn"  routerLink="/signup" class="btn btn-accent">Register</button> -->
+        </div>
+    </form>
+
+</div>

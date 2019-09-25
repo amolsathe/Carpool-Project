@@ -1,0 +1,78 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    position:static;
+}
+.mynav{
+    display: none;
+}
+.logo{
+    padding: 0.5em 1em;
+    width: 250px;
+    height: 60pt;
+}
+.userMenuBtn{
+    height: 100%;
+    font-size: 18px;
+    color: rgb(77, 121, 243);
+    transition: transform .2s;
+}
+.userMenuBtn:hover{
+    transform: scale(1.2);
+    background-color: white;
+}
+
+.userMenuOptions{
+    width: 210px;
+    font-family: 'Montserrat';
+}
+.menu{
+    padding: 1em;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    header{
+        display: flex;
+        justify-content: space-between;
+        position:static;
+    }
+    .logo{
+        padding: 0.5em 3em;
+        width: 350px;
+        height: 60pt;
+    }
+
+    nav ul{
+        list-style-type: none;
+        padding: 1.4em 6em 0 0;
+        text-decoration: none;
+        display: flex;
+        align-self: center;
+    }
+    nav li{
+        color: #6f2525;
+    }
+    nav li i{
+        size: 18px;
+        vertical-align: bottom;
+        padding-bottom: 0.1em;
+    }
+    .userMenuBtn{
+        height: 100%;
+        font-size: 18px;
+        color: rgb(77, 121, 243);
+        transition: transform .2s;
+    }
+    .userMenuBtn:hover{
+        transform: scale(1.2);
+        background-color: white;
+    }
+
+    .userMenuOptions{
+        width: 210px;
+        font-family: 'Montserrat';
+    }
+
+  }

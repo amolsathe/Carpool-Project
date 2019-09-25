@@ -1,0 +1,53 @@
+
+.row{
+    margin: 0;
+    margin-top: 2em;
+    justify-content: center;
+}
+.offer h5{
+    padding-top: 1.2em;
+}
+
+.drive{
+    margin: 0;
+    width:100%;
+    height: auto;
+    border-radius: 0.5em;
+}
+.offerBtn{
+    border: none;
+    border-radius: 1em;
+    padding: 0 0.5em;
+    margin-top: 1em;
+    height: 2em;
+    width: 8em;
+    background-color: rgb(32, 160, 117);
+    color: white;
+    transition: transform 0.1s;
+}
+.offerBtn:hover{
+    background-color: rgb(169, 243, 218);
+    color: black;
+}
+.material-icons{
+    vertical-align: bottom;
+    padding-bottom: 0.12em;
+}
+.ride {
+    padding: 0.5em;
+    border: 2px;
+}
+.ride a{
+    padding: 1em;
+    background-color: rgb(224, 222, 222);
+    text-decoration: none;
+    color: black;
+}
+.popRide {
+    margin-top: 3em;
+    padding-bottom: 3.5em;
+    background-color: rgb(114, 241, 114);
+}
+.popRide h5{
+    padding: 1em 0 0 0;
+}

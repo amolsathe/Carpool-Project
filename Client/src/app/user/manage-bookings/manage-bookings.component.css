@@ -1,0 +1,18 @@
+
+.bookings {
+    justify-content: center;
+    margin: 1em 0;
+}
+
+
+.bride{
+    width :100%;
+    justify-content: space-evenly;
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 3px 6px 20px 3px rgba(117, 248, 250, 0.19);
+}
+.bride div{
+    text-align: left;
+}
+.hwidth{
+    width: 100%;
+}

@@ -1,0 +1,38 @@
+
+.lform {
+    width: 30%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em 3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(0deg, #FFFFFF 75%,rgb(25, 106, 138) 25%);
+    border-radius: 0.5em;
+    margin-bottom: 7em;
+}
+.btnSubmit{
+    background-color: rgb(25, 106, 138);
+    color: white;
+}
+.btnSubmit:hover{
+    background-color: rgb(20, 76, 99);
+}
+
+.btnSubmit:disabled{
+    background-color: rgb(209, 167, 139);
+}
+
+.lform h2{
+    color: white;
+    text-align: center;
+    padding-top: 0.2em;
+    padding-bottom: 1em;
+}
+.fwidth{
+    width: 100%;
+}
+.lform p{
+    text-align: left;
+    padding: 0;
+    color: crimson;
+    font-style: italic;
+}

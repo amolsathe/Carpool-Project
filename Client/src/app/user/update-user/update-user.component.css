@@ -1,0 +1,30 @@
+.lform {
+    width: 60%;
+    margin: auto;
+    padding: 1em 3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(0deg, #FFFFFF 85%,rgb(25, 106, 138) 15%);
+    border-radius: 0.5em;
+    color: white;
+}
+
+.lform h2{
+    text-align: center;
+    padding-top: 0.2em;
+    padding-bottom: 1em;
+}
+.fwidth{
+    width: 100%;
+}
+.fwidth input {
+    color: black;
+}
+.lform p{
+    text-align: left;
+    padding: 0;
+    color: crimson;
+    font-style: italic;
+}
+.btn-primary{
+    background-color: rgb(25, 106, 138);
+}

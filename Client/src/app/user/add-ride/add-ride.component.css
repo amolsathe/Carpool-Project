@@ -1,0 +1,36 @@
+agm-map {
+    height: 500px;
+    border: 0 6px 10px 0 gray;
+}
+.lform {
+    width: 60%;
+    margin: auto;
+    padding: 1em 3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(0deg, #FFFFFF 90%, rgb(155, 245, 155)  10%);
+    border-radius: 0.5em;
+}
+
+.lform h2{
+    text-align: center;
+    padding-top: 0.2em;
+    padding-bottom: 1em;
+}
+.fwidth{
+    width: 100%;
+}
+.lform p{
+    text-align: left;
+    padding: 0;
+    color: crimson;
+    font-style: italic;
+}
+
+.btn-primary{
+    background-color: rgb(155, 245, 155);
+    border: none;
+    color: black;
+}
+.btn-primary:hover{
+    background-color: rgb(73, 207, 73);
+}

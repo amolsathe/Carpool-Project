@@ -1,0 +1,38 @@
+
+.dialog{
+    background-color: #B39DDB;
+    color: white;
+}
+
+.lform {
+    width: 100%;
+    margin: auto;
+    padding: 1em 3em 2em 3em;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* background: linear-gradient(0deg, #FFFFFF 78%,rgb(64, 77, 255) 22%); */
+    border-radius: 0.5em;
+}
+
+.lform h2{
+    text-align: center;
+    padding-top: 0.2em;
+    padding-bottom: 1em;
+}
+.fwidth{
+    width: 100%;
+}
+.lform p{
+    text-align: left;
+    padding: 0;
+    color: crimson;
+    font-style: italic;
+}
+.terms {
+    margin-left: 3em;
+    display: inline;
+    font-style: italic;
+    color: green;
+    padding-top: 1em;
+    font-size: 11pt;
+    text-align: right;
+}

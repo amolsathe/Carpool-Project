@@ -1,0 +1,61 @@
+<div class="bookings" *ngFor="let ride of oRides">
+    <div class="col-sm-10 offset-sm-1 bride" *ngIf="!modify">
+        <div class="row">
+            <h6 class="col-sm-3 offset-sm-3" style="color: red">{{status}}</h6>
+        </div>
+        <div class="from">{{ride.origin}} <strong> TO</strong></div>
+        <div class="to">{{ride.destination}}</div>
+        <div class="row dtime">
+            <div class="date col-sm-6">Journey Date : {{ride.date|date:"dd-MM-yyyy"}}</div>
+            <div class="time col-sm-6">Journey Time : {{ride.rideTime}}</div>
+        </div>
+        <div class="row seats">
+            <div class="availSeats col-sm-6">Available Seats : {{ride.availableSeats}}</div>
+            <div class="fare col-sm-6">&#x20B9; {{ride.fare|number:'3.2-2'}}</div>
+        </div>
+        <div class="row actions">
+            <input class="col-sm-6" type="button" (click)="onUpdate(ride)" value="Modify Ride">
+            <input class="col-sm-6" type="button" (click)="onDeleteRide(ride)" value="Delete Offered Ride">
+        </div>
+    </div>
+</div>
+<div class="modify" *ngIf="modify">
+    <form>
+        <div class="row">
+            <div class="col-sm-3 offset-sm-3">
+                <div class="">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate"
+                            placeholder="Date of Ride" [(ngModel)]="rideDate" name="rideDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="month" [startAt]="startDate"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class=" col-sm-3">
+                <mat-form-field class="">
+                    <input matInput placeholder="Time (24 hrs Format)" type="time" [(ngModel)]="rideTime"
+                        name="rideTime" required>
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <mat-form-field class="">
+                    <input matInput placeholder="Fare &#x20B9;" [(ngModel)]="fare" name="fare" required>
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <h6 class="col-sm-3 offset-sm-3" style="color: red">{{status}}</h6>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <button type="submit" (click)="onSubmit()" class="btn btn-primary">Change Offrered Ride
+                    Details</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div> -->
+
+
+<h1 mat-dialog-title> Login</h1>
+<div mat-dialog-content class="dialog">
+        <div class="lform">
+            <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <mat-form-field class="fwidth">
+                        <input matInput placeholder="Email ID" formControlName="username" name="username" required>
+                        <mat-icon matSuffix>keyboard_arrow_right</mat-icon>
+                        </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="fwidth" >
+                        <input matInput placeholder="Password" type="password" formControlName="password" name="origin" required>
+                        <mat-icon matSuffix>remove_red_eye</mat-icon>
+                    </mat-form-field>
+                </div>
+                <p>{{status}}</p>
+            </form>
+
+            </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()">Login</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button><p class="terms"></p>
+</div>
